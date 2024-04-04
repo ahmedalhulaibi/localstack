@@ -618,7 +618,7 @@ def process_event_with_input_transformer(input_transformer: Dict, event: Dict) -
         if not value:
             value = ""
         input_template = input_template.replace(f"<{key}>", value)
-    templated_event = re.sub('"', "", input_template)
+    templated_event = input_template[1:-1]
     return templated_event
 
 
